@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class StudentRegistrationForm {
@@ -62,16 +63,18 @@ public class StudentRegistrationForm {
 
         //Проверка всплывающего модального окна после успешной отправки формы
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $x("//tbody/tr[1]/td[2]").shouldHave(text("Carol Delmonte"));
-        $x("//tbody/tr[2]/td[2]").shouldHave(text("CarolBDelmonte@armyspy.com"));
-        $x("//tbody/tr[3]/td[2]").shouldHave(text("Male"));
-        $x("//tbody/tr[4]/td[2]").shouldHave(text("8165059611"));
-        $x("//tbody/tr[5]/td[2]").shouldHave(text("16 August,1988"));
-        $x("//tbody/tr[6]/td[2]").shouldHave(text("Hindi"));
-        $x("//tbody/tr[7]/td[2]").shouldHave(text("Reading, Music"));
-        $x("//tbody/tr[8]/td[2]").shouldHave(text("Duck_on_Yeadon_Tarn.jpg"));
-        $x("//tbody/tr[9]/td[2]").shouldHave(text("4959 Tree Frog Lane\n" +
-                "Kansas City, MO 64151"));
-        $x("//tbody/tr[10]/td[2]").shouldHave(text("Haryana Panipat"));
+        $("[class=\"table table-dark table-striped table-bordered table-hover\"]").$("tbody")
+                .shouldHave(text("Carol Delmonte"))
+                .shouldHave(text("CarolBDelmonte@armyspy.com"))
+                .shouldHave(text("Male"))
+                .shouldHave(text("8165059611"))
+                .shouldHave(text("16 August,1988"))
+                .shouldHave(text("Hindi"))
+                .shouldHave(text("Reading, Music"))
+                .shouldHave(text("Duck_on_Yeadon_Tarn.jpg"))
+                .shouldHave(text("4959 Tree Frog Lane\n" +
+                        "Kansas City, MO 64151"))
+                .shouldHave(text("Haryana Panipat"));
+
     }
 }
