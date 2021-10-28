@@ -51,8 +51,7 @@ public class StudentRegistrationForm {
         $("#uploadPicture").uploadFile(new File("src/test/resources/Duck_on_Yeadon_Tarn.jpg"));
 
         //Заполнение поля Current Address
-        $("#currentAddress").setValue("4959 Tree Frog Lane\n" +
-                "Kansas City, MO 64151");
+        $("#currentAddress").setValue("4959 Tree Frog Lane\n" + "Kansas City, MO 64151");
 
         //Заполнение полей State и City
         $("#react-select-3-input").setValue("Haryana").pressEnter();
@@ -64,17 +63,16 @@ public class StudentRegistrationForm {
         //Проверка всплывающего модального окна после успешной отправки формы
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $("[class=\"table table-dark table-striped table-bordered table-hover\"]").$("tbody")
-                .shouldHave(text("Carol Delmonte"))
-                .shouldHave(text("CarolBDelmonte@armyspy.com"))
-                .shouldHave(text("Male"))
-                .shouldHave(text("8165059611"))
-                .shouldHave(text("16 August,1988"))
-                .shouldHave(text("Hindi"))
-                .shouldHave(text("Reading, Music"))
-                .shouldHave(text("Duck_on_Yeadon_Tarn.jpg"))
-                .shouldHave(text("4959 Tree Frog Lane\n" +
-                        "Kansas City, MO 64151"))
-                .shouldHave(text("Haryana Panipat"));
+                .shouldHave(text("Carol Delmonte"),
+                text("CarolBDelmonte@armyspy.com"),
+                text("Male"),
+                text("8165059611"),
+                text("16 August,1988"),
+                text("Hindi"),
+                text("Reading, Music"),
+                text("Duck_on_Yeadon_Tarn.jpg"),
+                text("4959 Tree Frog Lane\n" + "Kansas City, MO 64151"),
+                text("Haryana Panipat"));
 
     }
 }
