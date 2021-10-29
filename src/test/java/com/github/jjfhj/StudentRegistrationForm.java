@@ -1,4 +1,4 @@
-package jjfhj.demoqa;
+package com.github.jjfhj;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,11 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class StudentRegistrationForm {
-
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
@@ -64,15 +63,15 @@ public class StudentRegistrationForm {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $("[class=\"table table-dark table-striped table-bordered table-hover\"]").$("tbody")
                 .shouldHave(text("Carol Delmonte"),
-                text("CarolBDelmonte@armyspy.com"),
-                text("Male"),
-                text("8165059611"),
-                text("16 August,1988"),
-                text("Hindi"),
-                text("Reading, Music"),
-                text("Duck_on_Yeadon_Tarn.jpg"),
-                text("4959 Tree Frog Lane\n" + "Kansas City, MO 64151"),
-                text("Haryana Panipat"));
+                        text("CarolBDelmonte@armyspy.com"),
+                        text("Male"),
+                        text("8165059611"),
+                        text("16 August,1988"),
+                        text("Hindi"),
+                        text("Reading, Music"),
+                        text("Duck_on_Yeadon_Tarn.jpg"),
+                        text("4959 Tree Frog Lane\n" + "Kansas City, MO 64151"),
+                        text("Haryana Panipat"));
 
     }
 }
