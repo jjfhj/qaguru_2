@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class StudentRegistrationForm {
+
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
